@@ -1,0 +1,31 @@
+# Project: <Your Project Name>
+
+> Copy this file to your project root as `CLAUDE.md` and edit it for your project.
+> Claude Code reads it automatically at the start of every session.
+> Keep it specific, actionable, and free of secrets.
+
+## Commands
+- Install: `<package manager> install`
+- Build: `<build command>`
+- Test: `<test command>` (single file: `<how to run one test file>`)
+- Lint: `<lint command>` — must pass before committing
+- Dev server: `<run command>` (port <n>)
+
+## Conventions
+- Language / style: <e.g. TypeScript strict; no `any` without a reason comment>
+- Error handling: <e.g. return a Result type, don't throw>
+- Tests: <where they live and how they're named>
+- Naming / formatting: <anything a linter doesn't already enforce>
+
+## Architecture notes
+- <key module>: <what it's for, what rule applies — e.g. "src/core/ is pure, no I/O">
+- <data access>: <e.g. "all DB access goes through src/db/repository.ts">
+- <anything load-bearing and easy to break>
+
+## Don't touch
+- <path>: <why — e.g. "legacy, being deprecated, do not extend">
+- <path>: <e.g. "migrations are append-only, never edit existing ones">
+
+## Project-specific tips
+- <non-obvious gotchas a new contributor would trip on>
+- <available custom slash commands, if any>

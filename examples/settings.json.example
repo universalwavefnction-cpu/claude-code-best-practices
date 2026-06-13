@@ -1,0 +1,24 @@
+{
+  "//": "Copy to .claude/settings.json in your project (committed, shared) or ~/.claude/settings.json (personal). Remove the comment keys before use — JSON has no comments.",
+
+  "//permissions": "Pre-approve safe commands to cut prompt noise; pre-deny dangerous ones as a backstop. Patterns support a trailing :* wildcard.",
+  "permissions": {
+    "allow": [
+      "Bash(npm run test:*)",
+      "Bash(npm run lint:*)",
+      "Bash(git status)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)"
+    ],
+    "deny": [
+      "Bash(rm -rf:*)",
+      "Bash(git push --force:*)",
+      "Bash(git reset --hard:*)"
+    ]
+  },
+
+  "//env": "Optional environment variables for the session. Never put secrets here if this file is committed.",
+  "env": {
+    "EXAMPLE_FLAG": "value"
+  }
+}
