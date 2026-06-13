@@ -40,6 +40,8 @@ To stop it mid-action: press **`Esc`**.
 
 **Fix:** allow-list your common safe commands in `.claude/settings.json` (e.g. your test and lint commands). The noise drops sharply and the genuinely consequential prompts stand out. See [Permissions & Safety](05-permissions-safety.md).
 
+Tempted to just run `claude --dangerously-skip-permissions` to silence everything? Don't — not on a machine you care about. That turns off *all* guardrails, including the ones protecting destructive and irreversible actions. Allow-listing or accept-edits mode gets you the quiet without the blast radius. Bypass mode belongs only in a disposable sandbox. See [the bypass-mode section](05-permissions-safety.md#-dangerously-skip-permissions-bypass-mode).
+
 ## It claims something works but you're not sure
 
 **Cause:** the agent reported success without (or despite) verification.
