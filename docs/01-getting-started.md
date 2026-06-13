@@ -53,6 +53,7 @@ Watch how it works: it reads before it writes, explains its plan, and shows you 
 | `/help` | List available commands |
 | `/model` | Switch the model (e.g. to a faster or more capable one) |
 | `/config` | Open settings |
+| `/memory` | Open your memory files to edit and tidy them |
 | `Esc` | Interrupt the agent mid-action |
 | `!command` | Run a shell command directly (output goes into the session) |
 | `#text` | Quickly add a note to memory / `CLAUDE.md` |

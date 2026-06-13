@@ -26,6 +26,7 @@ This repo is the difference between the two: the working habits, the configurati
 | 8 | [Subagents & Workflows](docs/08-subagents-workflows.md) | Parallelism and multi-step orchestration |
 | 9 | [Git Workflow](docs/09-git-workflow.md) | Commits, branches, and PRs done right |
 | 10 | [Troubleshooting](docs/10-troubleshooting.md) | Common failure modes and fixes |
+| 11 | [Memory](docs/11-memory.md) | Make Claude remember across sessions — hierarchy, capture, hygiene |
 
 Plus ready-to-copy [`examples/`](examples/): a starter `CLAUDE.md`, a `settings.json`, and a custom slash command.
 
@@ -33,7 +34,7 @@ Plus ready-to-copy [`examples/`](examples/): a starter `CLAUDE.md`, a `settings.
 
 If you read nothing else, internalize these:
 
-1. **Write a `CLAUDE.md`.** It's the project's memory. Every session starts by reading it. Put your build commands, conventions, and "don't touch X" rules there. See [guide 2](docs/02-claude-md.md).
+1. **Write a `CLAUDE.md`, and keep it alive.** It's the project's memory — read at the start of every session. Put your build commands, conventions, and "don't touch X" rules there, and capture new ones with `#` the moment the agent trips on something. See [guide 2](docs/02-claude-md.md) and [guide 11](docs/11-memory.md).
 2. **Give context, then a clear ask.** "Fix the bug" is weak. "The login form on `auth/login.tsx` rejects valid emails — find why and fix it" is strong. See [guide 3](docs/03-effective-prompting.md).
 3. **Let it work, then verify.** The agent is good. Trust it to act on reversible changes, but read the diff and run the tests. Don't micromanage; do confirm.
 4. **Keep context clean.** One task per session where you can. Use `/clear` between unrelated jobs. A focused context is a sharp agent. See [guide 4](docs/04-context-management.md).
@@ -55,7 +56,7 @@ claude
 
 **Первая сессия — три правила:**
 
-1. **Создайте файл `CLAUDE.md`** в корне проекта. Запишите туда команды сборки/тестов, соглашения по стилю кода и то, что трогать нельзя. Claude читает его в начале каждой сессии. → [Подробнее](docs/02-claude-md.md)
+1. **Создайте файл `CLAUDE.md`** в корне проекта — это память проекта. Запишите туда команды сборки/тестов, соглашения по стилю кода и то, что трогать нельзя. Claude читает его в начале каждой сессии. Новые правила добавляйте на лету командой `#`. → [Подробнее](docs/02-claude-md.md) · [Память и память между сессиями](docs/11-memory.md)
 2. **Давайте контекст, потом задачу.** Не «исправь баг», а «форма входа в `auth/login.tsx` не принимает валидные email — найди причину и исправь». → [Подробнее](docs/03-effective-prompting.md)
 3. **Проверяйте результат.** Агент хорош, но смотрите diff и запускайте тесты. Перед удалением файлов, force-push и деплоем — пусть всегда спрашивает разрешение. → [Подробнее](docs/05-permissions-safety.md)
 
@@ -65,6 +66,8 @@ claude
 |---------|-----------|
 | `/clear` | Очистить контекст перед новой задачей |
 | `/init` | Сгенерировать стартовый `CLAUDE.md` |
+| `#текст` | Быстро добавить правило в память (`CLAUDE.md`) |
+| `/memory` | Открыть файлы памяти для редактирования |
 | `/help` | Список команд |
 | `Esc` | Прервать текущее действие агента |
 | `! команда` | Выполнить shell-команду напрямую |
